@@ -1,3 +1,2 @@
-# Code is in master branch
-
-# check master branch
+# Check master branch
+ Code in the master branch so please change the branch
