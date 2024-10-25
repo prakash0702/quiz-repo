@@ -44,7 +44,7 @@ function App() {
           onFinishQuiz={handleFinishQuiz}
         />
       )}
-       {stage === 'result' && (
+      {stage === 'result' && (
         <ResultPage score={score} totalQuestions={totalQuestions} />
       )}
     </div>

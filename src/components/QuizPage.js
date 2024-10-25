@@ -8,6 +8,9 @@ const QuizPage = ({ category, onFinishQuiz }) => {
 
   const currentQuestion = category.questions[currentQuestionIndex];
 
+  /**
+   *  check the timer and redirect to next question if timer is finished
+   */
   useEffect(() => {
     if (timer === 0) {
       handleNext();
@@ -17,6 +20,10 @@ const QuizPage = ({ category, onFinishQuiz }) => {
     }
   }, [timer]);
 
+  /**
+   * Handle event of answer selection
+   * @param {*} answer 
+   */
   const handleAnswerSelect = (answer) => {
     setSelectedAnswer(answer);
     if (answer.split('.')[0] === currentQuestion.correctAnswer) {
@@ -24,6 +31,9 @@ const QuizPage = ({ category, onFinishQuiz }) => {
     }
   };
 
+  /**
+   * Navigate to next page
+   */
   const handleNext = () => {
     setSelectedAnswer(null);
     setTimer(10);
@@ -42,19 +52,18 @@ const QuizPage = ({ category, onFinishQuiz }) => {
         <h3 className="font-semibold mb-4 normal-case">{currentQuestion.question}</h3>
         <div className="grid gap-2">
           {currentQuestion.options.map((option, index) => (
-            <button 
-                key={index}
-                onClick={() => (!selectedAnswer && option !== selectedAnswer) && handleAnswerSelect(option)}
-                className={`px-4 py-2 border rounded ${
-                    selectedAnswer === option ? 
-                    (option.split('.')[0] === currentQuestion.correctAnswer ? 'bg-green-600' : 'bg-red-600') 
-                    : 'hover:bg-teal-200'
+            <button
+              key={index}
+              onClick={() => (!selectedAnswer && option !== selectedAnswer) && handleAnswerSelect(option)}
+              className={`px-4 py-2 border rounded ${selectedAnswer === option ?
+                  (option.split('.')[0] === currentQuestion.correctAnswer ? 'bg-green-600' : 'bg-red-600')
+                  : 'hover:bg-teal-200'
                 }`}
             >
               {option}
             </button>
           ))}
-           <p className="mb-4 text-right">Time Remaining: {timer}s</p>
+          <p className="mb-4 text-right">Time Remaining: {timer}s</p>
         </div>
       </div>
       <button
