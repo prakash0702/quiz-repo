@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import CategorySelection from './components/CategorySelection';
 import { quizData } from './data';
 import QuizPage from './components/QuizPage';
+import ResultPage from './components/ResultPage';
 
 function App() {
   const [stage, setStage] = useState('category');
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [score, setScore] = useState(0);
+  const [totalQuestions, setTotalQuestions] = useState(0);
 
   /**
    * Handle event of the category selections
@@ -16,7 +19,14 @@ function App() {
     setStage('quiz');
   };
 
-  const handleFinishQuiz = () => {
+  /**
+   *  Set the final score and stage
+   * @param {*} finalScore 
+   * @param {*} total 
+   */
+  const handleFinishQuiz = (finalScore, total) => {
+    setScore(finalScore);
+    setTotalQuestions(total);
     setStage('result');
   }
 
@@ -33,6 +43,9 @@ function App() {
           category={selectedCategory}
           onFinishQuiz={handleFinishQuiz}
         />
+      )}
+       {stage === 'result' && (
+        <ResultPage score={score} totalQuestions={totalQuestions} />
       )}
     </div>
   );

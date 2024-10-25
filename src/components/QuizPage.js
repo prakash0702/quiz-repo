@@ -15,8 +15,6 @@ const QuizPage = ({ category, onFinishQuiz }) => {
       const countdown = setInterval(() => setTimer(timer - 1), 1000);
       return () => clearInterval(countdown);
     }
-
-    
   }, [timer]);
 
   const handleAnswerSelect = (answer) => {
@@ -44,14 +42,14 @@ const QuizPage = ({ category, onFinishQuiz }) => {
         <h3 className="font-semibold mb-4 normal-case">{currentQuestion.question}</h3>
         <div className="grid gap-2">
           {currentQuestion.options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleAnswerSelect(option)}
-              className={`px-4 py-2 border rounded ${
-                selectedAnswer === option ? 
-                  (option.split('.')[0] === currentQuestion.correctAnswer ? 'bg-green-600' : 'bg-red-600') 
-                  : 'hover:bg-teal-200'
-              }`}
+            <button 
+                key={index}
+                onClick={() => (!selectedAnswer && option !== selectedAnswer) && handleAnswerSelect(option)}
+                className={`px-4 py-2 border rounded ${
+                    selectedAnswer === option ? 
+                    (option.split('.')[0] === currentQuestion.correctAnswer ? 'bg-green-600' : 'bg-red-600') 
+                    : 'hover:bg-teal-200'
+                }`}
             >
               {option}
             </button>
