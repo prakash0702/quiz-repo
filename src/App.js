@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import CategorySelection from './components/CategorySelection';
+import { quizData } from './data';
 
 function App() {
+  const [stage, setStage] = useState('category');
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  /**
+   * Handle event of the category selections
+   * @param {*} category 
+   */
+  const handleSelectCategory = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      {stage === 'category' && (
+        <CategorySelection
+          categories={quizData.categories}
+          onSelectCategory={handleSelectCategory}
+        />
+      )}
     </div>
   );
 }
