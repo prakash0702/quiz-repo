@@ -14,7 +14,6 @@ export const quizData = {
               "D. <script file='script.js'>"
             ],
             correctAnswer: "C",
-            timeLimit: 10
           },
           {
             id: "q2",
@@ -26,11 +25,10 @@ export const quizData = {
               "D. Mozilla"
             ],
             correctAnswer: "B",
-            timeLimit: 10
           },
           {
             id: "q3",
-            question: "What is JSX?",
+            question: "What is JSX? in JavaScript",
             options: [
               "A. HTML",
               "B. JavaScript",
@@ -38,11 +36,10 @@ export const quizData = {
               "D. XML"
             ],
             correctAnswer: "C",
-            timeLimit: 10
           },
           {
             id: "q4",
-            question: "useState use",
+            question: "useState use in JavaScript",
             options: [
               "A. Store data globally",
               "B. Store data locally",
@@ -50,7 +47,6 @@ export const quizData = {
               "D. Pass data to child"
             ],
             correctAnswer: "B",
-            timeLimit: 10
           },
           {
             id: "q5",
@@ -62,7 +58,6 @@ export const quizData = {
               "D. Declaration "
             ],
             correctAnswer: "D",
-            timeLimit: 10
           },
         ]
       },
@@ -80,7 +75,6 @@ export const quizData = {
               "D. <script file='script.js'>"
             ],
             correctAnswer: "C",
-            timeLimit: 10
           },
           {
             id: "q2",
@@ -92,11 +86,10 @@ export const quizData = {
               "D. Mozilla"
             ],
             correctAnswer: "B",
-            timeLimit: 10
           },
           {
             id: "q3",
-            question: "What is JSX?",
+            question: "What is JSX? in JavaScript",
             options: [
               "A. HTML",
               "B. JavaScript",
@@ -104,11 +97,10 @@ export const quizData = {
               "D. XML"
             ],
             correctAnswer: "C",
-            timeLimit: 10
           },
           {
             id: "q4",
-            question: "useState use",
+            question: "useState use inside JavaScript",
             options: [
               "A. Store data globally",
               "B. Store data locally",
@@ -116,7 +108,6 @@ export const quizData = {
               "D. Pass data to child"
             ],
             correctAnswer: "B",
-            timeLimit: 10
           },
           {
             id: "q5",
@@ -128,7 +119,6 @@ export const quizData = {
               "D. Declaration "
             ],
             correctAnswer: "D",
-            timeLimit: 10
           },
         ]
       }
